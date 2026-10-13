@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RecipeFinder — Explore Recipes</title>
+    <meta
+      name="description"
+      content="Find recipes from around the world and save your favorites."
+    />
+    <meta property="og:title" content="RecipeFinder — Explore Recipes" />
+    <meta
+      property="og:description"
+      content="Find recipes from around the world and save your favorites."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container topbar">
+        <a class="logo" href="index.html">🍳 RecipeFinder</a
+        ><button id="tabFav" class="favorite-tab">
+          ❤️ Favorites <span id="favCount">0</span>
+        </button>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow">✦ RECIPE EXPLORER</span>
+        <h1>What do you want<br />to cook today?</h1>
+        <p>Find simple recipes from around the world.</p>
+        <form id="searchForm" class="search">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search recipes or cuisines..."
+            aria-label="Search recipes or cuisines"
+          /><button type="submit">Search</button>
+        </form>
+        <div class="filters">
+          <select id="cuisineFilter" aria-label="Cuisine">
+            <option value="all">All Cuisines</option></select
+          ><select id="difficultyFilter" aria-label="Difficulty">
+            <option value="all">All Difficulty</option>
+            <option>Easy</option>
+            <option>Medium</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <main class="container">
+      <div class="section-heading">
+        <div>
+          <span class="section-label">DISCOVER</span>
+          <h2 id="sectionTitle">Explore Recipes</h2>
+        </div>
+        <span id="info" role="status">Loading recipes...</span>
+      </div>
+      <section id="recipeList" class="grid" aria-label="Recipes"></section>
+    </main>
+    <dialog id="modal" aria-labelledby="detailTitle">
+      <button id="closeModal" class="close-btn" aria-label="Close recipe">
+        ×
+      </button>
+      <div id="modalContent"></div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
